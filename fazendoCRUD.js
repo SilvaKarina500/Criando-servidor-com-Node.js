@@ -1,5 +1,4 @@
 const http = require('http');
-const { join } = require('path');
 
 // Simula um "banco de dados" em memória
 // array de objetos
@@ -32,7 +31,7 @@ const server = http.createServer((req, res) => {
     // MÉTODO POST
 
     if (url === "/livros" && method === "POST") {
-        let body = ' ';
+        let body = '';
         // Oque significa o .on é uma ação que vai ser disparada junto com requisição
         // "data -> começo", "end -> faz a volta",
         req.on('data', parte => {
@@ -55,7 +54,7 @@ const server = http.createServer((req, res) => {
 
     //Método PUT
     if (url === "/livros" && method === "PUT") {
-        let body = ' ';
+        let body = '';
 
         req.on('data', parte => {
             body += parte
@@ -80,7 +79,7 @@ const server = http.createServer((req, res) => {
     };
     // metodo DELETE cuidado com letras maiusculas, virgulas 
     if (url === "/livros" && method === "DELETE") {
-        let body = ' ';
+        let body = '';
 
         req.on('data', parte => {
             body += parte;
